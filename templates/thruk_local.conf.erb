@@ -2,15 +2,12 @@ title_prefix = <%= @titleprefix %>
 enable_icinga_features = 1
 <Component Thruk::Backend>
 <% @servers.each do |server| %>
-    <peer>
-        name    = icinga
-        id      = 
+    <peer> 
         type    = livestatus
+        name    = <%= server %>
         <options>
             peer          = <%= server %>:6557
-            remote_name   = icinga
         </options>
     </peer>
-    <peer>
 <% end -%>
 </Component>

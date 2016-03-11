@@ -8,4 +8,6 @@ define thruk::config(
 #	content => template('thruk/thruk_local.conf.erb'),
 #        }
 
+    include thruk
+        
     }

@@ -13,8 +13,8 @@ class thruk {
             group  => apache,
            # source => "puppet:///modules/thruk/thruk_local.conf",
             content => template('thruk/thruk_local.conf.erb'),
-            notify  => Service['thruk'],
             require => Package['thruk'],
+            notify  => Service['httpd'],
         }
               
         service{"httpd":
@@ -22,4 +22,10 @@ class thruk {
         }
 
     }
+
+    thruk::config{"cfg":
+        titleprefix => $titleprefix,
+        servers     => $servers,
+    }
+
 }
