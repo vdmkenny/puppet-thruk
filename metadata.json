@@ -1,0 +1,15 @@
+{
+  "name": "vdmkenny-thruk",
+  "version": "0.1.0",
+  "author": "vdmkenny",
+  "summary": "A puppet module to install thruk",
+  "license": "Apache-2.0",
+  "source": "https://github.com/vdmkenny/puppet-thruk.git",
+  "project_page": "https://github.com/vdmkenny/puppet-thruk",
+  "issues_url": "https://github.com/vdmkenny/puppet-thruk/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
