@@ -16,7 +16,16 @@ class thruk {
             require => Package['thruk'],
             notify  => Service['httpd'],
         }
-              
+        
+        file{"/etc/thruk/cgi.cfg":
+            mode    => 644,
+            owner   => apache,
+            group   => apache,
+            content => template('thruk/cgi.cfg.erb'),
+            require => Package['thruk'],
+            notify  => Service['httpd'],
+        }
+
         service{"httpd":
             ensure=>running,
         }
@@ -26,6 +35,7 @@ class thruk {
     thruk::config{"cfg":
         titleprefix => $titleprefix,
         servers     => $servers,
+        privuser    => $privuser,
     }
 
 }

@@ -1,6 +1,7 @@
 define thruk::config(
     $servers=['127.0.0.1'],
-    $titleprefix= "Thruk - "
+    $titleprefix= "Thruk - ",
+    $privuser="*",
    ){
     
 #    file{'/etc/thruk/thruk_local.conf':
